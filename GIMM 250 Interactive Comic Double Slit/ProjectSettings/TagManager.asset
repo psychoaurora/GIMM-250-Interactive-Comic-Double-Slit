@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Ground
+  - Hub world
   layers:
   - Default
   - TransparentFX
