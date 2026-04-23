@@ -251,7 +251,7 @@ Transform:
   m_GameObject: {fileID: 19180557}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 21.33, y: 9.27, z: 0}
+  m_LocalPosition: {x: 24.79, y: 9.33, z: 0}
   m_LocalScale: {x: 0.93418264, y: 1.3630154, z: 0.5079}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1120,7 +1120,7 @@ Transform:
   m_GameObject: {fileID: 303391349}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.03, y: 0.28, z: 0}
+  m_LocalPosition: {x: 15.55, y: 0.4, z: 0}
   m_LocalScale: {x: 1.3475864, y: 8.473296, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2381,7 +2381,6 @@ GameObject:
   - component: {fileID: 1268544963}
   - component: {fileID: 1268544962}
   - component: {fileID: 1268544961}
-  - component: {fileID: 1268544960}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2389,28 +2388,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1268544960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1268544959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef9b3023faca915419939b9b70722ec7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerInfo
-  hubWorldDoors:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  gameplayDoors:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  currentDoor: 1
 --- !u!114 &1268544961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2571,7 +2548,7 @@ Transform:
   m_GameObject: {fileID: 1268544959}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.15, y: -0.25, z: 0}
+  m_LocalPosition: {x: 0.11, y: -2.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3985,8 +3962,8 @@ Transform:
   m_GameObject: {fileID: 1711045287}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.4363, y: 4.97, z: 0}
-  m_LocalScale: {x: 20.701233, y: 1.9431937, z: 1}
+  m_LocalPosition: {x: 2.9949, y: 4.97, z: 0}
+  m_LocalScale: {x: 23.818838, y: 1.9431937, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -4570,7 +4547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c47641aede1f8464ca0213382dae3ff9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraController
-  target: {fileID: 0}
+  target: {fileID: 1268544965}
   lockX: 0
   lockY: 0
   lockXAxis: 0

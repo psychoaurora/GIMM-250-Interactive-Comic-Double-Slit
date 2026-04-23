@@ -5,10 +5,19 @@ using UnityEngine.SceneManagement;
 //This script and GamePlayDoor script were influenced by Game Code Library on YouTube as well as code by Claude
 public class HubWorldDoor : Door
 {
-    [SerializeField] private string destination;
-    [SerializeField] private int doorNumber;
+    [SerializeField] string destination;
+    [SerializeField] int doorNumber;
+
+    PlayerInfo playerInfo;
+    [SerializeField] GameObject playerInfoObject;
 
     private bool playerIsNearby = false;
+
+    private void Awake()
+    {
+        playerInfoObject = GameObject.FindGameObjectWithTag("PlayerInfo");
+        playerInfo = playerInfoObject.gameObject.GetComponent<PlayerInfo>();
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,7 +28,7 @@ public class HubWorldDoor : Door
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && playerIsNearby)
+        if (Input.GetKeyDown(KeyCode.E) && playerIsNearby && playerInfo.currentDoor <= doorNumber)
         {
             Interact();
         }
@@ -29,9 +38,9 @@ public class HubWorldDoor : Door
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            PlayerInfo playerInfo = other.gameObject.GetComponent<PlayerInfo>();
+            //PlayerInfo playerInfo = other.gameObject.GetComponent<PlayerInfo>();
 
-            if (playerInfo != null && playerInfo.currentDoor <= doorNumber)
+            if (playerInfo != null && doorNumber <= playerInfo.currentDoor)
             {
                 playerIsNearby = true;
                 Debug.Log("Player is nearby");

@@ -10,7 +10,15 @@ public class GameplayerDoor : Door
     [SerializeField] private int doorNumber;
 
     private bool playerIsNearby = false;
-    private PlayerInfo playerInfo;
+
+    PlayerInfo playerInfo;
+    [SerializeField] GameObject playerInfoObject;
+
+    private void Awake()
+    {
+        playerInfoObject = GameObject.FindGameObjectWithTag("PlayerInfo");
+        playerInfo = playerInfoObject.GetComponent<PlayerInfo>();
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -31,13 +39,8 @@ public class GameplayerDoor : Door
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            PlayerInfo playerInfo = other.gameObject.GetComponent<PlayerInfo>();
-
-            if (playerInfo != null && playerInfo.currentDoor <= doorNumber)
-            {
-                playerIsNearby = true;
-                Debug.Log("Player is nearby");
-            }
+            playerIsNearby = true;
+            Debug.Log("Player is nearby");
         }
     }
 
