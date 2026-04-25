@@ -19,9 +19,7 @@ public class MoveState : IPlayerState
     public void Update()
     {
         float input = Input.GetAxisRaw("Horizontal");
-        Debug.Log(machine.HorizontalSpeed);
         Vector2 movement = new Vector2(input * machine.HorizontalSpeed, machine.rb.linearVelocity.y);
-        Debug.Log(movement);
         machine.rb.linearVelocity = movement;
 
         if (input < 0)
