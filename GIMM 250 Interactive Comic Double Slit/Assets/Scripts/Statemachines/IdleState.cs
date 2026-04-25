@@ -11,7 +11,6 @@ public class IdleState : IPlayerState
 
     public void Enter()
     {
-        Debug.Log("Entered Idle State");
         //Maybe start an animation or something
     }
 

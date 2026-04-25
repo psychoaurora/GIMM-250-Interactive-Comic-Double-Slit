@@ -11,6 +11,9 @@ public class GameplayerDoor : Door
 
     private bool playerIsNearby = false;
 
+    GameObject globalHelperObject;
+    GlobalHelper globalHelper;
+
     PlayerInfo playerInfo;
     [SerializeField] GameObject playerInfoObject;
 
@@ -18,6 +21,9 @@ public class GameplayerDoor : Door
     {
         playerInfoObject = GameObject.FindGameObjectWithTag("PlayerInfo");
         playerInfo = playerInfoObject.GetComponent<PlayerInfo>();
+
+        globalHelperObject = GameObject.FindGameObjectWithTag("GlobalHelper");
+        globalHelper = globalHelperObject.GetComponent<GlobalHelper>();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -60,13 +66,7 @@ public class GameplayerDoor : Door
 
     protected override void Enter()
     {
-        if (playerInfo != null)
-        {
-            if (playerInfo.currentDoor == doorNumber)
-            {
-                playerInfo.currentDoor++;
-            }
-        }
+        globalHelper.EnterHubWorld(doorNumber);
 
         SceneManager.LoadScene(destination);
     }

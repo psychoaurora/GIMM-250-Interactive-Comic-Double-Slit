@@ -28,7 +28,7 @@ public class HubWorldDoor : Door
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && playerIsNearby && playerInfo.currentDoor <= doorNumber)
+        if (Input.GetKeyDown(KeyCode.E) && playerIsNearby && playerInfo.CurrentDoor <= doorNumber)
         {
             Interact();
         }
@@ -40,7 +40,7 @@ public class HubWorldDoor : Door
         {
             //PlayerInfo playerInfo = other.gameObject.GetComponent<PlayerInfo>();
 
-            if (playerInfo != null && doorNumber <= playerInfo.currentDoor)
+            if (playerInfo != null && doorNumber <= playerInfo.CurrentDoor)
             {
                 playerIsNearby = true;
                 Debug.Log("Player is nearby");
