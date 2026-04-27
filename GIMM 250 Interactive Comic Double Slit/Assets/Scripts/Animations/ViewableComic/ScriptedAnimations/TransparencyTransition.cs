@@ -29,6 +29,7 @@ public class TransparencyTransition : MonoBehaviour
     //}
 
     [SerializeField] private bool playing = false;
+    [SerializeField] private bool reverse = false;
 
     private void Start()
     {
@@ -42,6 +43,6 @@ public class TransparencyTransition : MonoBehaviour
     {
         transition.Playing = playing;
         transition.MainUpdate();
-        img.color = Color.Lerp(colorGoal, imgColor, transition.CurrentPosition);
+        img.color = Color.Lerp(reverse ? imgColor : colorGoal, reverse ? colorGoal : imgColor, transition.CurrentPosition);
     }
 }
