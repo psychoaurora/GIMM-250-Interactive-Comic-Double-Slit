@@ -1352,6 +1352,8 @@ GameObject:
   m_Layer: 0
   m_Name: room
   m_TagString: Untagged
+  m_Name: GateObject
+  m_TagString: gate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1472,9 +1474,12 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -10.3348, y: -1.2707, z: 0}
   m_LocalScale: {x: 8.452929, y: 4.558745, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.3475864, y: 8.473296, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 924008238}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &290353027
 GameObject:
@@ -10112,7 +10117,7 @@ SceneRoots:
   - {fileID: 271403896}
   - {fileID: 1711045290}
   - {fileID: 46722435}
-  - {fileID: 303391352}
+  - {fileID: 924008238}
   - {fileID: 208611687}
   - {fileID: 1400276141}
   - {fileID: 1670281338}
