@@ -160,7 +160,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -173,11 +173,33 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: assets-for-gimm-semester-2-newexplorthouse-in-distance_1
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 13
+        width: 39
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b148b23f0cb732546b962943552ea0dd
+      internalID: -387585868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: c715a090f92a9cf4b9c1412bb71107cb
     internalID: 0
     vertices: []
     indices: 
@@ -188,6 +210,7 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       assets-for-gimm-semester-2-newexplorthouse-in-distance_0: -2607242261870964560
+      assets-for-gimm-semester-2-newexplorthouse-in-distance_1: -387585868
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
