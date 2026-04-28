@@ -8,6 +8,7 @@ TagManager:
   - Hub world
   - PlayerInfo
   - GlobalHelper
+  - gate
   layers:
   - Default
   - TransparentFX
