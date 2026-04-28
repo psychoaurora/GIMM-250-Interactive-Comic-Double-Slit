@@ -7,7 +7,7 @@ public class GlobalHelper : MonoBehaviour
     PlayerInfo playerInfo;
     [SerializeField] GameObject playerInfoObject;
 
-    GameObject gate;
+    [SerializeField] GameObject gate;
 
     private void Awake()
     {
@@ -23,8 +23,6 @@ public class GlobalHelper : MonoBehaviour
 
         playerInfoObject = GameObject.FindGameObjectWithTag("PlayerInfo");
         playerInfo = playerInfoObject.GetComponent<PlayerInfo>();
-
-        //gate = GameObject.Find("Gate");
     }
 
     public void EnterHubWorld(int doorNumber)
@@ -45,6 +43,7 @@ public class GlobalHelper : MonoBehaviour
 
     public void UpdateGate() //Only for the courtyard scene
     {
-        //gate.transform.position = new Vector3(gate.transform.position.x, 8.2f, gate.transform.position.z);
+        gate = GameObject.FindGameObjectWithTag("gate");
+        gate.transform.position = new Vector3(transform.position.x, 8.2f, transform.position.z);
     }
 }
