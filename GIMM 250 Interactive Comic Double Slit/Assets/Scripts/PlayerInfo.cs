@@ -11,8 +11,6 @@ public class PlayerInfo : MonoBehaviour //This script should probably be attache
 
     [SerializeField] int knifePieces = 0;
 
-    [SerializeField] int currentCheckpoint = 0;
-
     private int keyFragment = 0;
 
     GameObject globalHelperObject;
@@ -93,11 +91,5 @@ public class PlayerInfo : MonoBehaviour //This script should probably be attache
     {
         get { return knifePieces; }
         set { knifePieces = value; }
-    }
-
-    public int CurrentCheckpoint
-    {
-        get { return currentCheckpoint; }
-        set { currentCheckpoint = value; }
     }
 }

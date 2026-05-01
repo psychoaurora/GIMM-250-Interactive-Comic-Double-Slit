@@ -79,7 +79,7 @@ public class VisionCheck : MonoBehaviour
 
     void CheckVision()
     {
-        LayerMask layerMask = LayerMask.GetMask("Wall", "Elevator", "Platform"); //layers the raycast should hit. Can add more because we probably want platforms and not just walls.
+        LayerMask layerMask = LayerMask.GetMask("Wall", "Elevator"); //layers the raycast should hit. Can add more because we probably want platforms and not just walls.
 
         Vector3 screenMousePosition = Input.mousePosition;
         Vector2 worldMousePosition = mainCamera.ScreenToWorldPoint(screenMousePosition);
