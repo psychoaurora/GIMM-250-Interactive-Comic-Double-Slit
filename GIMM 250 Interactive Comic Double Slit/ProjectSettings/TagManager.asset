@@ -9,6 +9,7 @@ TagManager:
   - PlayerInfo
   - GlobalHelper
   - gate
+  - Comic
   layers:
   - Default
   - TransparentFX

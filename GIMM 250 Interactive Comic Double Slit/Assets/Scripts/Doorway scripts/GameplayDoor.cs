@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -59,6 +60,8 @@ public class GameplayerDoor : Door
         }
     }
 
+   
+
     protected override void Interact()
     {
         Enter();
@@ -66,8 +69,7 @@ public class GameplayerDoor : Door
 
     protected override void Enter()
     {
-        globalHelper.EnterHubWorld(doorNumber);
-
         SceneManager.LoadScene(destination);
+        globalHelper.EnterHubWorld(doorNumber);
     }
 }

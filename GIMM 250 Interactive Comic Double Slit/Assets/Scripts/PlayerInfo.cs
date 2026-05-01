@@ -9,9 +9,9 @@ public class PlayerInfo : MonoBehaviour //This script should probably be attache
     [SerializeField] int currentDoor = 1; //Whatever door it is currently in.
     [SerializeField] int currentComic = 1; //Whatever comic the player is on
 
-    private int keyFragment = 0;
+    [SerializeField] int knifePieces = 0;
 
-    private const int FINALDOOR = 4;
+    private int keyFragment = 0;
 
     GameObject globalHelperObject;
     GlobalHelper globalHelper;
@@ -68,7 +68,6 @@ public class PlayerInfo : MonoBehaviour //This script should probably be attache
         set
         {
             currentComic = value;
-            //Update the current Comic for the interactive feature
         }
     }
 
@@ -86,5 +85,11 @@ public class PlayerInfo : MonoBehaviour //This script should probably be attache
                 globalHelper.UpdateGate();
             }
         }
+    }
+
+    public int KnifePieces
+    {
+        get { return knifePieces; }
+        set { knifePieces = value; }
     }
 }

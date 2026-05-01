@@ -1,8 +1,11 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GlobalHelper : MonoBehaviour
 {
     public static GlobalHelper instance;
+
+    [SerializeField] GameObject[] comicObjects = new GameObject[4];
 
     PlayerInfo playerInfo;
     [SerializeField] GameObject playerInfoObject;
@@ -28,6 +31,7 @@ public class GlobalHelper : MonoBehaviour
     public void EnterHubWorld(int doorNumber)
     {
         UpdateCurrentDoor(doorNumber);
+        Invoke("UpdateCurrentComic", 2f); //This calls the UpdateCurrentComic method after 2 seconds. 
     }
 
     private void UpdateCurrentDoor(int doorNumber)
@@ -45,5 +49,35 @@ public class GlobalHelper : MonoBehaviour
     {
         gate = GameObject.FindGameObjectWithTag("gate");
         gate.transform.position = new Vector3(transform.position.x, 8.2f, transform.position.z);
+    }
+
+    public void UpdateCurrentComic()
+    {
+        comicObjects = GameObject.FindGameObjectsWithTag("Comic");
+
+        if (playerInfo.KnifePieces == 3)
+        {
+            foreach (GameObject comic in comicObjects)
+            {
+                comic.SetActive(true);
+            }
+        }
+        else
+        {
+            foreach (GameObject comic in comicObjects)
+            {
+                if (playerInfo.CurrentComic < comic.gameObject.GetComponent<ClickableObject>().comicNumber)
+                //if the current comic number is smaller than the comic's number, set it to false.
+                {
+                    comic.SetActive(false);
+                }
+            }
+        }
+
+    }
+
+    public void UpdateFinalComic()
+    {
+
     }
 }
