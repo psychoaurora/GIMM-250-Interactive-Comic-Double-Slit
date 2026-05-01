@@ -5393,7 +5393,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 61
   m_MaskInteraction: 0
   m_Sprite: {fileID: -5625580404607356863, guid: 983562b5898c125468f2bb02bec97f49, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 0.5176471}
@@ -5485,7 +5485,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 50
+  m_SortingOrder: 63
   m_MaskInteraction: 0
   m_Sprite: {fileID: 5374670287375106324, guid: c2cb95f3eafc88547a140f63ae10b4a3, type: 3}
   m_Color: {r: 1, g: 0.9677756, b: 0, a: 1}
@@ -5586,7 +5586,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 50
+  m_SortingOrder: 62
   m_MaskInteraction: 0
   m_Sprite: {fileID: -5625580404607356863, guid: 983562b5898c125468f2bb02bec97f49, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5746,8 +5746,10 @@ MonoBehaviour:
   point: {fileID: 3768863743286663068}
   eyeCR: {r: 0, g: 0.46451986, b: 1, a: 1}
   eyeCL: {r: 1, g: 1, b: 0, a: 1}
+  viewers: {fileID: 0}
   movingPlatforms: []
   lineThickness: 0.5
+  eyeActive: 0
 --- !u!1 &8063992882187602561
 GameObject:
   m_ObjectHideFlags: 0
