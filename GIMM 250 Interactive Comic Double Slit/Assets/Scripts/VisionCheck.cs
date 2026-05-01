@@ -12,7 +12,7 @@ public class VisionCheck : MonoBehaviour
     GameObject player;
     Camera mainCamera;
 
-    [SerializeField] bool isUsingLeftEye = true;
+    public bool isUsingLeftEye = true;
 
     [SerializeField] SpriteRenderer eyeSprite;
     [SerializeField] SpriteRenderer beam;

@@ -6,15 +6,30 @@ public class DoorMazeDoor : Door
     [SerializeField] Transform destination;
     [SerializeField] GameObject playerObj;
 
+    public bool doorIsCorrect = false;
+    public SpriteRenderer sprite;
+    private VisionCheck checkVision;
+
     private bool playerIsNearby;
+    private bool lastEye = false;
+    private float currColor = 0;
 
     public void Start()
     {
+        sprite = GetComponent<SpriteRenderer>();
         GameObject playerObj = GameObject.FindWithTag("Player");
+        checkVision = playerObj.GetComponent<VisionCheck>();
     }
 
     void Update()
     {
+        if ( lastEye != checkVision.isUsingLeftEye)
+        {
+            currColor = 1;
+            lastEye = checkVision.isUsingLeftEye;
+        }
+        sprite.color = Color.Lerp(Color.white, doorIsCorrect ? Color.blue : Color.darkRed, currColor);
+        sprite.color = !checkVision.isUsingLeftEye ? doorIsCorrect ? Color.blue : Color.darkRed : Color.white;
         if (Input.GetKeyDown(KeyCode.E) && playerIsNearby)
         {
             Interact();
