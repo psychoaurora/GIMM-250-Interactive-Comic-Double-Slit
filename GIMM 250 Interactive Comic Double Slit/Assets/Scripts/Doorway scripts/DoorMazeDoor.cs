@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class DoorMazeDoor : Door
 {
     [SerializeField] Transform destination;
+    [SerializeField] Transform altDestination;
     [SerializeField] GameObject playerObj;
 
     public bool doorIsCorrect = false;
@@ -19,17 +20,21 @@ public class DoorMazeDoor : Door
         sprite = GetComponent<SpriteRenderer>();
         GameObject playerObj = GameObject.FindWithTag("Player");
         checkVision = playerObj.GetComponent<VisionCheck>();
+        lastEye = checkVision.isUsingLeftEye;
     }
 
     void Update()
     {
         if ( lastEye != checkVision.isUsingLeftEye)
         {
+            if (altDestination != null)
+                destination = altDestination;
             currColor = 1;
             lastEye = checkVision.isUsingLeftEye;
         }
-        sprite.color = Color.Lerp(Color.white, doorIsCorrect ? Color.blue : Color.darkRed, currColor);
-        sprite.color = !checkVision.isUsingLeftEye ? doorIsCorrect ? Color.blue : Color.darkRed : Color.white;
+        sprite.color = Color.Lerp(!playerIsNearby ? Color.white : Color.forestGreen, doorIsCorrect ? Color.blue : Color.darkRed, currColor);
+        currColor = Mathf.Clamp(currColor - Time.deltaTime, 0, 1);
+        
         if (Input.GetKeyDown(KeyCode.E) && playerIsNearby)
         {
             Interact();
@@ -66,6 +71,8 @@ public class DoorMazeDoor : Door
     protected override void Enter()
     {
         playerObj.transform.position = new Vector3(destination.position.x, destination.position.y);
+        if (destination.GetComponent<SpriteRenderer>() != null)
+            destination.GetComponent<SpriteRenderer>().enabled = true;
         Debug.Log($"Set player transform to {destination.position.x} and {destination.position.y}");
     }
 }
