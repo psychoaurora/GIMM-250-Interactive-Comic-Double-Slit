@@ -8,6 +8,8 @@ public class HubWorldDoor : Door
     [SerializeField] string destination;
     [SerializeField] int doorNumber;
 
+    [SerializeField] GameObject selection;
+
     PlayerInfo playerInfo;
     [SerializeField] GameObject playerInfoObject;
 
@@ -31,6 +33,15 @@ public class HubWorldDoor : Door
         if (Input.GetKeyDown(KeyCode.E) && playerIsNearby && playerInfo.CurrentDoor <= doorNumber)
         {
             Interact();
+        }
+
+        if (!playerIsNearby)
+        {
+            selection.SetActive(false);
+        }
+        else
+        {
+            selection.SetActive(true);
         }
     }
 
