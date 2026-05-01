@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class KnifeCollection : MonoBehaviour
 {
-    [SerializeField] PlayerInfo playerInfo;
+    PlayerInfo playerInfo;
 
     [SerializeField] int knifeNumber;
 
@@ -11,15 +11,11 @@ public class KnifeCollection : MonoBehaviour
         get { return knifeNumber; }
         set { knifeNumber = value; }
     }
-    private void Awake()
-    {
-        playerInfo = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInfo>();
-    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-       
+        playerInfo = GameObject.FindGameObjectWithTag("PlayerInfo").GetComponent<PlayerInfo>();
     }
 
     // Update is called once per frame
