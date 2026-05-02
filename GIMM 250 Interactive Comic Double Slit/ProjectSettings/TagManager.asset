@@ -10,6 +10,9 @@ TagManager:
   - GlobalHelper
   - gate
   - HordeObject
+  - Comic
+  - Floor
+  - PlayerSeat
   layers:
   - Default
   - TransparentFX

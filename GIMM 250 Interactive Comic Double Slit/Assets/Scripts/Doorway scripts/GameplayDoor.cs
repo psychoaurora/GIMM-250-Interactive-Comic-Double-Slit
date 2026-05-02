@@ -18,6 +18,7 @@ public class GameplayerDoor : Door
     PlayerInfo playerInfo;
     [SerializeField] GameObject playerInfoObject;
 
+
     private void Awake()
     {
         playerInfoObject = GameObject.FindGameObjectWithTag("PlayerInfo");
@@ -38,6 +39,7 @@ public class GameplayerDoor : Door
     {
         if (Input.GetKeyDown(KeyCode.E) && playerIsNearby)
         {
+            Debug.Log("checking interaction...");
             Interact();
         }
     }
@@ -64,7 +66,23 @@ public class GameplayerDoor : Door
 
     protected override void Interact()
     {
-        Enter();
+        //if the current object is the player seat, end game instead of doing anything else
+        Debug.Log("checking if player seat...");
+        if (gameObject.CompareTag("PlayerSeat"))
+        {
+
+            //play intro
+            Debug.Log("haha intro go brrrr");
+            //reset player vars here
+            globalHelper.ResetPlayerInfo();
+            Debug.Log("player vars reset");
+        }
+        else
+        {
+            Debug.Log("is not player seat. is door.");
+            Enter();
+        }
+        Debug.Log("end of interact");
     }
 
     protected override void Enter()
