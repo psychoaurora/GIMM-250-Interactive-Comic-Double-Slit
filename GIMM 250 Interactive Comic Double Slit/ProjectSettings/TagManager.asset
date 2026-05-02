@@ -9,6 +9,7 @@ TagManager:
   - PlayerInfo
   - GlobalHelper
   - gate
+  - HordeObject
   layers:
   - Default
   - TransparentFX

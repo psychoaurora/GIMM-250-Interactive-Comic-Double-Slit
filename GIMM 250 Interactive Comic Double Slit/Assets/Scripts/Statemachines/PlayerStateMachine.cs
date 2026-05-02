@@ -21,10 +21,13 @@ public class PlayerStateMachine : MonoBehaviour
 
     public float StepInterval => 1f / movementFps;
 
+    public Vector3 startPosition; 
+
     void Start()
     {
         SwitchState(new IdleState(this));
         rb = GetComponent<Rigidbody2D>();
+        startPosition = transform.position;
     }
 
     // Update is called once per frame
@@ -96,6 +99,16 @@ public class PlayerStateMachine : MonoBehaviour
         }
 
         Debug.DrawRay(origin, direction * distance, Color.red);
+    }
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("HordeObject"))
+        {
+            //reset player to start
+            Debug.Log("uh oh, moving player to start");
+            transform.position = startPosition;
+        }
     }
 }
 
