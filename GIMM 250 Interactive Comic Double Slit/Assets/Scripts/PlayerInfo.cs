@@ -11,7 +11,7 @@ public class PlayerInfo : MonoBehaviour //This script should probably be attache
 
     [SerializeField] int knifePieces = 0;
 
-    private int keyFragment = 0;
+    [SerializeField] int keyFragment = 0;
 
     GameObject globalHelperObject;
     GlobalHelper globalHelper;
