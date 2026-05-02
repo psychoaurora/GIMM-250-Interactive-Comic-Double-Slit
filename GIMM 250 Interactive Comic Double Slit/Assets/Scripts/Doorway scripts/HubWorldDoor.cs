@@ -30,7 +30,7 @@ public class HubWorldDoor : Door
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && playerIsNearby && playerInfo.CurrentDoor <= doorNumber)
+        if (Input.GetKeyDown(KeyCode.E) && playerIsNearby && playerInfo.CurrentDoor >= doorNumber)
         {
             Interact();
         }

@@ -28,6 +28,11 @@ public class GlobalHelper : MonoBehaviour
         playerInfo = playerInfoObject.GetComponent<PlayerInfo>();
     }
 
+    private void Start()
+    {
+        UpdateCurrentComic();
+    }
+
     public void EnterHubWorld(int doorNumber)
     {
         UpdateCurrentDoor(doorNumber);
@@ -59,7 +64,7 @@ public class GlobalHelper : MonoBehaviour
         {
             foreach (GameObject comic in comicObjects)
             {
-                comic.SetActive(true);
+                comic.SetActive(true); //Hopefully should just keep them as true but it works.
             }
         }
         else
@@ -73,11 +78,15 @@ public class GlobalHelper : MonoBehaviour
                 }
             }
         }
-
     }
 
-    public void UpdateFinalComic()
+    //Call this when you are done with the game. 
+    public void ResetPlayerInfo()
     {
-
+        playerInfo.CurrentCheckpoint = 0;
+        playerInfo.CurrentComic = 0;
+        playerInfo.CurrentDoor = 0;
+        playerInfo.KnifePieces = 0;
+        playerInfo.KeyFragment = 0;
     }
 }

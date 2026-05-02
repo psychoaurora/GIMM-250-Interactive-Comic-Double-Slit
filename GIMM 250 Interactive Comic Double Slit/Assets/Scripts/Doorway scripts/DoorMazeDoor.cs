@@ -7,6 +7,8 @@ public class DoorMazeDoor : Door
     [SerializeField] Transform altDestination;
     [SerializeField] GameObject playerObj;
 
+    [SerializeField] GameObject text;
+
     public bool doorIsCorrect = false;
     public SpriteRenderer sprite;
     private VisionCheck checkVision;
@@ -72,7 +74,11 @@ public class DoorMazeDoor : Door
     {
         playerObj.transform.position = new Vector3(destination.position.x, destination.position.y);
         if (destination.GetComponent<SpriteRenderer>() != null)
+        {
             destination.GetComponent<SpriteRenderer>().enabled = true;
+            text.SetActive(true);
+        }
+        
         Debug.Log($"Set player transform to {destination.position.x} and {destination.position.y}");
     }
 }
