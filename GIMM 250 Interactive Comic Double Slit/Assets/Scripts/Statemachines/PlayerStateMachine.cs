@@ -4,7 +4,7 @@ public class PlayerStateMachine : MonoBehaviour
 {
 
     [Header("Movement properties")]
-    [SerializeField] private float horizontalSpeed ;
+    [SerializeField] private float horizontalSpeed;
     [SerializeField] private float jumpForce;
 
     [Header("Movement step rate")]
@@ -17,11 +17,11 @@ public class PlayerStateMachine : MonoBehaviour
     public bool isGrounded;
     public int jumps = 1;
     public int maxJumps = 1;
-   
+
 
     public float StepInterval => 1f / movementFps;
 
-    public Vector3 startPosition; 
+    public Vector3 startPosition;
 
     void Start()
     {
@@ -34,7 +34,7 @@ public class PlayerStateMachine : MonoBehaviour
     void Update()
     {
         currentState?.Update();
-
+        // Debug.Log(startPosition);
         CheckGround();
     }
 
@@ -101,7 +101,7 @@ public class PlayerStateMachine : MonoBehaviour
         Debug.DrawRay(origin, direction * distance, Color.red);
     }
 
-    public void OnTriggerEnter2D(Collider2D other)
+    public void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("HordeObject"))
         {
