@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 //This script and HubWorldDoor script were influenced by Game Code Library on YouTube as well as code by Claude
 
-public class GameplayerDoor : Door
+public class GameplayDoor : Door
 {
     [SerializeField] private string destination;
     [SerializeField] private int doorNumber;
@@ -77,6 +77,7 @@ public class GameplayerDoor : Door
             globalHelper.ResetPlayerInfo();
             Debug.Log("player vars reset");
         }
+        //otherwise, treat it like a door
         else
         {
             Debug.Log("is not player seat. is door.");
