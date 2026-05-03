@@ -20,7 +20,7 @@ public class CameraController : MonoBehaviour
         // Update the camera's position
         if (!lockXAxis)
         {
-            targetPosition.x = Mathf.Lerp(transform.position.x, target.position.x, 1f);
+            targetPosition.x = Mathf.Lerp(transform.position.x, target.position.x + lockX, 1f);
         }
         else
         {
@@ -29,7 +29,7 @@ public class CameraController : MonoBehaviour
 
         if (!lockYAxis)
         {
-            targetPosition.y = Mathf.Lerp(transform.position.y, target.position.y, 1f);
+            targetPosition.y = Mathf.Lerp(transform.position.y, target.position.y + lockY, 1f);
         }
         else
         {

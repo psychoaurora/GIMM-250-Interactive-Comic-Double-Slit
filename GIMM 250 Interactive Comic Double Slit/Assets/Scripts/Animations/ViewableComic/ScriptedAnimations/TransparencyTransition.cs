@@ -31,17 +31,23 @@ public class TransparencyTransition : MonoBehaviour
     [SerializeField] private bool playing = false;
     [SerializeField] private bool reverse = false;
 
+    public void RestartTransition()
+    {
+        img.color = imgColor;
+        transition.Playing = true;
+    }
+
     private void Start()
     {
         img = GetComponent<RawImage>();
         imgColor = img.color;
         colorGoal = new Color(imgColor.r, imgColor.g, imgColor.b, 0);
-        transition = new AnimatedTransition(false, transitionTime, curve, false, true);
+        transition = new AnimatedTransition(false, transitionTime, curve, false, false);
+        transition.Playing = playing;
     }
 
     private void FixedUpdate()
     {
-        transition.Playing = playing;
         transition.MainUpdate();
         img.color = Color.Lerp(reverse ? imgColor : colorGoal, reverse ? colorGoal : imgColor, transition.CurrentPosition);
     }

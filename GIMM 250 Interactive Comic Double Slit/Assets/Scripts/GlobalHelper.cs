@@ -53,7 +53,7 @@ public class GlobalHelper : MonoBehaviour
     public void UpdateGate() //Only for the courtyard scene
     {
         gate = GameObject.FindGameObjectWithTag("gate");
-        gate.transform.position = new Vector3(transform.position.x, 8.2f, transform.position.z);
+        gate.SetActive(false);
     }
 
     public void UpdateCurrentComic()

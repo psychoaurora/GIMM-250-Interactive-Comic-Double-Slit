@@ -12,6 +12,7 @@ public class DoorMazeDoor : Door
     public bool doorIsCorrect = false;
     public SpriteRenderer sprite;
     private VisionCheck checkVision;
+    private TransparencyTransition transparentScreen;
 
     private bool playerIsNearby;
     private bool lastEye = false;
@@ -23,6 +24,7 @@ public class DoorMazeDoor : Door
         GameObject playerObj = GameObject.FindWithTag("Player");
         checkVision = playerObj.GetComponent<VisionCheck>();
         lastEye = checkVision.isUsingLeftEye;
+        transparentScreen = GameObject.FindWithTag("FadeObject").GetComponent<TransparencyTransition>();
     }
 
     void Update()
@@ -72,6 +74,7 @@ public class DoorMazeDoor : Door
 
     protected override void Enter()
     {
+        transparentScreen.RestartTransition();
         playerObj.transform.position = new Vector3(destination.position.x, destination.position.y);
         if (destination.GetComponent<SpriteRenderer>() != null)
         {

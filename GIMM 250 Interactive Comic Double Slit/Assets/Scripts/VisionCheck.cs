@@ -83,7 +83,7 @@ public class VisionCheck : MonoBehaviour
 
         Vector3 screenMousePosition = Input.mousePosition;
         Vector2 worldMousePosition = mainCamera.ScreenToWorldPoint(screenMousePosition);
-        Vector2 origin = transform.position;
+        Vector2 origin = eyeSprite.gameObject.transform.position;
         Vector2 direction = (worldMousePosition - origin).normalized;
         Vector2 directionRay = (worldMousePosition - origin);
         float distance = Mathf.Infinity;
