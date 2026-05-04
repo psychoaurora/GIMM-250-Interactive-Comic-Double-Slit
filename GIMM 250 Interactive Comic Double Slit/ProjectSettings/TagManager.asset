@@ -12,6 +12,8 @@ TagManager:
   - HordeObject
   - Comic
   - FadeObject
+  - Floor
+  - PlayerSeat
   layers:
   - Default
   - TransparentFX

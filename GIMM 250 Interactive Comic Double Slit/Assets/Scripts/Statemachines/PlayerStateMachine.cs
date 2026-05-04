@@ -109,6 +109,7 @@ public class PlayerStateMachine : MonoBehaviour
             Debug.Log("uh oh, moving player to start");
             transform.position = startPosition;
         }
+        Debug.Log(other.gameObject.tag);
     }
 }
 
