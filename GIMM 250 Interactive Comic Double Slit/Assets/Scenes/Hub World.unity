@@ -13276,7 +13276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6108aa468e437748bfdc93f527c9221, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HubWorldDoor
-  destination: Final
+  destination: Theater
   doorNumber: 4
   selection: {fileID: 649525273}
   playerInfoObject: {fileID: 1961872798}

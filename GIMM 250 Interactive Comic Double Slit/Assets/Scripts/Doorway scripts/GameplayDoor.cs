@@ -76,6 +76,8 @@ public class GameplayDoor : Door
             //reset player vars here
             globalHelper.ResetPlayerInfo();
             Debug.Log("player vars reset");
+            // reset game, go back to world hub?
+            SceneManager.LoadScene(0);
         }
         //otherwise, treat it like a door
         else
