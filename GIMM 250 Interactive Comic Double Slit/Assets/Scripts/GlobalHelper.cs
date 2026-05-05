@@ -71,6 +71,16 @@ public class GlobalHelper : MonoBehaviour
                 comic.SetActive(true); //Hopefully should just keep them as true but it works.
             }
         }
+        else if (playerInfo.CurrentComic == 3 && playerInfo.KnifePieces != 3)
+        {
+            foreach (GameObject comic in comicObjects)
+            {
+                if (comic.gameObject.GetComponent<ClickableObject>().comicNumber > 3)
+                {
+                    comic.SetActive(false);
+                }
+            }
+        }
         else
         {
             foreach (GameObject comic in comicObjects)
