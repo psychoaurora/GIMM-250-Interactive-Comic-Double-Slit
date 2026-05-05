@@ -36,6 +36,13 @@ public class GlobalHelper : MonoBehaviour
     {
         UpdateCurrentComic();
     }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            UpdateCurrentComic();
+        }
+    }
 
     public void EnterHubWorld(int doorNumber)
     {
@@ -105,5 +112,7 @@ public class GlobalHelper : MonoBehaviour
         playerInfo.CurrentDoor = 1;
         playerInfo.KnifePieces = 0;
         playerInfo.KeyFragment = 0;
+
+        //UpdateCurrentDoor(playerInfo.CurrentDoor);
     }
 }

@@ -27429,7 +27429,7 @@ MonoBehaviour:
   finalIntro:
     m_PersistentCalls:
       m_Calls: []
-  selection: {fileID: -7686340936106359773, guid: 63c435c8fabe6a94ea18104ce41b64f4, type: 3}
+  selection: {fileID: 1698734518}
   playerInfoObject: {fileID: 0}
 --- !u!61 &1739002086
 BoxCollider2D:
