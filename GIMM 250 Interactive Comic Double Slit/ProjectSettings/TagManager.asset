@@ -14,6 +14,9 @@ TagManager:
   - FadeObject
   - Floor
   - PlayerSeat
+  - BackgroundEves
+  - MainEve
+  - FinalIntro
   layers:
   - Default
   - TransparentFX

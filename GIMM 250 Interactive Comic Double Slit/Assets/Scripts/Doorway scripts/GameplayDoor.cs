@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 //This script and HubWorldDoor script were influenced by Game Code Library on YouTube as well as code by Claude
@@ -9,6 +10,7 @@ public class GameplayDoor : Door
 {
     [SerializeField] private string destination;
     [SerializeField] private int doorNumber;
+    [SerializeField] private UnityEvent finalIntro;
 
     private bool playerIsNearby = false;
 
@@ -70,12 +72,14 @@ public class GameplayDoor : Door
         Debug.Log("checking if player seat...");
         if (gameObject.CompareTag("PlayerSeat"))
         {
-
-            //play intro
-            Debug.Log("haha intro go brrrr");
-            //reset player vars here
-            globalHelper.ResetPlayerInfo();
-            Debug.Log("player vars reset");
+            GameObject eveSit = GameObject.FindGameObjectWithTag("MainEve");
+            eveSit.GetComponent<SpriteRenderer>().enabled = true;
+            
+            GameObject plr = GameObject.FindGameObjectWithTag("Player");
+            plr.transform.position = eveSit.transform.position;
+            plr.SetActive(false);
+           // GameObject.FindGameObjectWithTag("FinalIntro").SetActive(true);
+            finalIntro.Invoke();
         }
         //otherwise, treat it like a door
         else

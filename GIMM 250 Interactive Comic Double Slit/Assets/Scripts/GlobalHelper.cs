@@ -98,8 +98,7 @@ public class GlobalHelper : MonoBehaviour
     public void ResetPlayerInfo()
     {
         playerInfo.CurrentCheckpoint = 0;
-        playerInfo.CurrentComic = 0;
-        playerInfo.CurrentDoor = 0;
+        playerInfo.CurrentDoor = 1;
         playerInfo.KnifePieces = 0;
         playerInfo.KeyFragment = 0;
     }

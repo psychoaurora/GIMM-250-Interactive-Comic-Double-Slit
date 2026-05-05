@@ -1,5 +1,6 @@
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
@@ -15,6 +16,11 @@ public class PauseMenu : MonoBehaviour
     private void Awake()
     {
         plrInfo = GameObject.FindGameObjectWithTag("PlayerInfo").GetComponent<PlayerInfo>();
+
+        if (FindObjectOfType<EventSystem>() == null)
+        {
+            GameObject es = new GameObject("EventSystem", typeof(EventSystem), typeof(StandaloneInputModule));
+        }
     }
 
     void Update()
@@ -44,7 +50,7 @@ public class PauseMenu : MonoBehaviour
     public void Restart()
     {
         GamePause();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("Hub World");
     }
 
     public void QuitGame()
