@@ -40,6 +40,8 @@ public class GlobalHelper : MonoBehaviour
     {
         UpdateCurrentDoor(doorNumber);
         UpdateCurrentComic();
+        playerInfo.CurrentCheckpoint = 0;
+        playerInfo.KeyFragment = 0;
         //Invoke("UpdateCurrentComic", 0f); //This calls the UpdateCurrentComic method after 2 seconds. 
     }
 
