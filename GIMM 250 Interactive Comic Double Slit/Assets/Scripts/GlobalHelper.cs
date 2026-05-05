@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -71,8 +72,9 @@ public class GlobalHelper : MonoBehaviour
                 comic.SetActive(true); //Hopefully should just keep them as true but it works.
             }
         }
-        else if (playerInfo.CurrentComic == 3 && playerInfo.KnifePieces != 3)
+        else if (playerInfo.CurrentComic == 4 && playerInfo.KnifePieces != 3)
         {
+            //If the player is on the 4th comic and doesn't have 3 knife pieces, make all comics (last comic) not active.
             foreach (GameObject comic in comicObjects)
             {
                 if (comic.gameObject.GetComponent<ClickableObject>().comicNumber > 3)

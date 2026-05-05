@@ -12,6 +12,8 @@ public class GameplayDoor : Door
     [SerializeField] private int doorNumber;
     [SerializeField] private UnityEvent finalIntro;
 
+    [SerializeField] GameObject selection;
+
     private bool playerIsNearby = false;
 
     GameObject globalHelperObject;
@@ -43,6 +45,15 @@ public class GameplayDoor : Door
         {
             Debug.Log("checking interaction...");
             Interact();
+        }
+
+        if (!playerIsNearby)
+        {
+            selection.SetActive(false);
+        }
+        else
+        {
+            selection.SetActive(true);
         }
     }
 
