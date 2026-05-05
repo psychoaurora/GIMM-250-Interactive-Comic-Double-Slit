@@ -29,9 +29,21 @@ public class HordeObjectMovement : MonoBehaviour
     {
         //TODO: move object
         //Debug.Log("i exist");
+        if (PauseMenu.GamePaused) return;
         transform.position += movement * movementSpeed;
         if (checker.isUsingLeftEye == eyeColor)
         {
+            Transform knife = transform.Find("KnifePiece");
+            //Transform knifeHier = transform.parent.Find("KnifePiece");
+            if (knife != null) //&& knifeHier != null)
+                if (knife.gameObject.activeSelf)
+                {
+                    knife.SetParent(transform.parent, true);
+                    knife.GetComponent<FloatUpAndDown>().enabled = true;
+                    knife.GetComponent<BoxCollider2D>().enabled = true;
+                    knife.GetComponent<KnifeCollection>().enabled = true;
+                }
+                    
             gameObject.SetActive(false);
         }
 

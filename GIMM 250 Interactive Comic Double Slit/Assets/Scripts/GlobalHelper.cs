@@ -26,6 +26,9 @@ public class GlobalHelper : MonoBehaviour
 
         playerInfoObject = GameObject.FindGameObjectWithTag("PlayerInfo");
         playerInfo = playerInfoObject.GetComponent<PlayerInfo>();
+
+        if (SceneManager.GetActiveScene().name == "Hub World")
+            EnterHubWorld(-10);
     }
 
     private void Start()
@@ -36,7 +39,8 @@ public class GlobalHelper : MonoBehaviour
     public void EnterHubWorld(int doorNumber)
     {
         UpdateCurrentDoor(doorNumber);
-        Invoke("UpdateCurrentComic", 2f); //This calls the UpdateCurrentComic method after 2 seconds. 
+        UpdateCurrentComic();
+        //Invoke("UpdateCurrentComic", 0f); //This calls the UpdateCurrentComic method after 2 seconds. 
     }
 
     private void UpdateCurrentDoor(int doorNumber)

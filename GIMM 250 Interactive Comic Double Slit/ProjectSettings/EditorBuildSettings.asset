@@ -17,5 +17,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Courtyard-Hotel.unity
     guid: 81319af17cb97a44ca2a85b338997890
+  - enabled: 1
+    path: Assets/Scenes/IntroAnimation.unity
+    guid: 20c151157dad30e4aab463d565e3aaff
+  - enabled: 1
+    path: Assets/Scenes/Theater.unity
+    guid: 119871dc772736f4d8002c2052fb7232
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

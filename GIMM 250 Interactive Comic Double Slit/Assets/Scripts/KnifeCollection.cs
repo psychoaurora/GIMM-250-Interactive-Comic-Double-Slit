@@ -1,3 +1,4 @@
+using Unity.Hierarchy;
 using UnityEngine;
 
 public class KnifeCollection : MonoBehaviour
@@ -12,10 +13,23 @@ public class KnifeCollection : MonoBehaviour
         set { knifeNumber = value; }
     }
 
+    public void DoCheck()
+    {
+        if (playerInfo != null)
+            if (knifeNumber <= playerInfo.KnifePieces)
+            {
+                Destroy(gameObject);
+            }
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         playerInfo = GameObject.FindGameObjectWithTag("PlayerInfo").GetComponent<PlayerInfo>();
+        if (knifeNumber <= playerInfo.KnifePieces)
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Update is called once per frame

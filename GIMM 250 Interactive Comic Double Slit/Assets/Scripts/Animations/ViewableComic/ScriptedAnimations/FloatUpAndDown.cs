@@ -11,12 +11,12 @@ public class FloatUpAndDown : MonoBehaviour
 
     void Start()
     {
-        startPos = transform.position;
+        startPos = transform.localPosition;
         transition = new AnimatedTransition(true, bobTime, curve, true, false, -1);
     }
     void FixedUpdate()
     {
         transition.MainUpdate();
-        transform.position = Vector3.LerpUnclamped(startPos, startPos + floatOffset, transition.CurrentPosition);
+        transform.localPosition = Vector3.LerpUnclamped(startPos, startPos + floatOffset, transition.CurrentPosition);
     }
 }

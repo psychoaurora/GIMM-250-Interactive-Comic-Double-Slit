@@ -8,6 +8,7 @@ public class ClickableObject : MonoBehaviour
     [SerializeField] private UnityEvent onClick;
     private void OnMouseDown()
     {
+        if (PauseMenu.GamePaused) return;
         onClick.Invoke();
     }
 }
