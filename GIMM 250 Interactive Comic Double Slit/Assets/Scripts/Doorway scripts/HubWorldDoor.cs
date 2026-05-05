@@ -73,6 +73,7 @@ public class HubWorldDoor : Door
 
     protected override void Enter()
     {
+        playerInfo.CurrentCheckpoint = 0;
         SceneManager.LoadScene(destination);
     }
 }

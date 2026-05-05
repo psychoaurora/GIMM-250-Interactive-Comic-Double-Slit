@@ -6217,7 +6217,7 @@ GameObject:
   - component: {fileID: 125360228}
   - component: {fileID: 125360230}
   - component: {fileID: 125360229}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Courtyard roof (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104600,7 +104600,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1711045290}
   - component: {fileID: 1711045289}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Courtyard roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127544,7 +127544,7 @@ MonoBehaviour:
   finalIntro:
     m_PersistentCalls:
       m_Calls: []
-  selection: {fileID: 0}
+  selection: {fileID: 1834314484}
   playerInfoObject: {fileID: 0}
 --- !u!1 &2023617546
 GameObject:

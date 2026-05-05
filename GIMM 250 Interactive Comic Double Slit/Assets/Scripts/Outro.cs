@@ -22,9 +22,9 @@ public class Outro : MonoBehaviour
     {
         videoFade = new AnimatedTransition(false, 32, curve);
         Invoke("StartVideo", 1);
-        Invoke("FadeVideo", 28);
-        Invoke("FadeEves", 30);
-        Invoke("EndGame", 44);
+        Invoke("FadeVideo", 35);
+        Invoke("FadeEves", 38);
+        Invoke("EndGame", 50);
     }
 
     public void StartVideo()
